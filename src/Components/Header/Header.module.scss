@@ -1,3 +1,51 @@
+@use 'vars';
+
 .header {
-  
+  font-family: var(--font-roboto);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: vars.$primaryColor;
+  color: vars.$lightColor;
+  padding: 0.5rem 2rem;
+  font-size: 1.6rem;
+
+  .logo {
+    p {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  }
+
+  .navigation {
+    display: flex;
+    justify-content: flex-end;
+    flex: 0.5;
+    gap: 2rem;
+
+    nav {
+      ul {
+        display: flex;
+        gap: 2rem;
+        margin-right: 2rem;
+        li {
+
+        }
+      }
+    }
+  }
+
+  input {
+    min-width: 30rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    border: none;
+    padding-left: 1rem;
+    outline: none;
+    padding: 1rem;
+  }
+
+  > div {
+    display: flex;
+  }
 }

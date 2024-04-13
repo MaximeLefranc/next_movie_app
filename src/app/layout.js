@@ -6,7 +6,7 @@ import { roboto, montserrat } from '@/font';
 
 // Styles
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import './globals.css';
+import '@/styles/globals.scss';
 
 export const metadata = {
   title: 'Create Next App',

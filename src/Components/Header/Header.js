@@ -6,10 +6,10 @@ import styles from './Header.module.scss';
 const Header = () => {
   return (
     <header className={styles.header}>
-      <div>
+      <div className={styles.logo}>
         <p>MyMovieApp</p>
       </div>
-      <div>
+      <div className={styles.navigation}>
         <nav>
           <ul>
             <li>Séries</li>
