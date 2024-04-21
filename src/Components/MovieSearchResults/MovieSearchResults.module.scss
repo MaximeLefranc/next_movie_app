@@ -1,0 +1,39 @@
+@use 'vars';
+
+.searchResults {
+  margin: 0 1rem;
+  position: absolute;
+  z-index: 3;
+  background-color: vars.$lightColor;
+  top: 4.5rem;
+  padding: 1rem;
+  max-height: 40rem;
+  overflow: auto;
+  border-radius: 0 0 .3rem .3rem;
+  font-family: var(--font-montserrat);
+  width: 30rem;
+
+  > div > a {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+
+    &:hover {
+      p {
+        color: vars.$secondaryColor;
+      }
+    }
+
+    img {
+      box-shadow: vars.$box-shadow-card;
+    }
+
+    p {
+      margin-left: 1rem;
+      color: black;
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+  }
+}

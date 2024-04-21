@@ -17,11 +17,28 @@
 
   .content {
     padding: 1rem;
+    position: relative;
 
-    h2 {
+    .vote {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: -1.5rem;
+      border-radius: 50%;
+      width: 3rem;
+      height: 3rem;
+      z-index: 2;
+      border: 1px solid vars.$primaryColor;
+      background-color: white;
+      font-size: 1.3rem;
+
+    }
+
+    h3 {
       font-size: 1.6rem;
       font-weight: 700;
-      margin-bottom: 1.5rem;
+      margin: 1.5rem 0;
     }
   }
 }

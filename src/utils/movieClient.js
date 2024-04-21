@@ -1,10 +1,17 @@
 import 'server-only';
 
-export const getMovieByPath = (path, language = 'fr-FR') => {
+export const getMovieByPath = (path, params = [], language = 'fr-FR') => {
   const url = new URL(`${process.env.TMDB_API_URL}${path}`);
 
-  url.searchParams.append('apy_key', process.env.TMDB_API_KEY);
   url.searchParams.append('language', language);
 
-  return fetch(url).then((response) => response.json());
+  params.forEach((param) => {
+    url.searchParams.append(param.key, param.value);
+  });
+
+  return fetch(url, {
+    headers: {
+      Authorization: `Bearer ${process.env.TMDB_JWT_TOKEN}`,
+    },
+  }).then((response) => response.json());
 };

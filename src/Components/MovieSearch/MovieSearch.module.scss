@@ -1,0 +1,10 @@
+@use 'vars';
+
+.container {
+  position: relative;
+
+  .modalOpen {
+    border-bottom-left-radius: unset;
+    border-bottom-right-radius: unset;
+  }
+}

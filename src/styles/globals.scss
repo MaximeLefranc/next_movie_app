@@ -10,6 +10,13 @@ a {
   color: inherit;
 }
 
+h2 {
+  margin: 1rem 0 3rem 0;
+  font-size: 2.6rem;
+  font-weight: bold;
+  color: vars.$secondaryColor;
+}
+
 .error {
   width: 100%;
   min-height: 90vh;
@@ -17,7 +24,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: vars.$seondaryColor;
+  color: vars.$secondaryColor;
   font-family: var(--font-montserrat);
 
   h1 {

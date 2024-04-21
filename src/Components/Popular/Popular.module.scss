@@ -1,0 +1,10 @@
+@use 'vars';
+
+.container {
+  display: flex;
+  gap: 3rem;
+
+  > div {
+    width: 20rem;
+  }
+}
