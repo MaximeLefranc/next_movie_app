@@ -11,7 +11,21 @@ import styles from './Popular.module.scss';
 
 const Popular = async () => {
   const { results } = await getMovieByPath('/movie/popular');
-  const popularMovies = results.slice(0, 6);
+  const { genres } = await getMovieByPath('/genre/movie/list');
+
+  const popularMovies = results.slice(0, 6).map((movie) => {
+    const genresToAdd = [];
+
+    movie.genre_ids.map((genreID) => {
+      genresToAdd.push(genres.find((genre) => genre.id === genreID));
+    });
+
+    return {
+      ...movie,
+      genres: genresToAdd.slice(0, 2),
+    };
+  });
+
   return (
     <div>
       <h2>Les plus populaires</h2>

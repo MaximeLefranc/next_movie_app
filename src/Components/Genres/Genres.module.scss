@@ -1,0 +1,20 @@
+@use 'vars';
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+
+  .genre {
+    padding: 1rem 0;
+    background-color: vars.$primaryColor;
+    color: vars.$lightColor;
+    font-weight: bold;
+    flex: 0 0 calc(20% - 2rem);
+    text-align: center;
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
+}

@@ -19,6 +19,25 @@
     padding: 1rem;
     position: relative;
 
+    .genres {
+      position: absolute;
+      display: flex;
+      justify-content: flex-end;
+      width: calc(100% - 5rem);
+      right: 0;
+      gap: 0.5rem;
+      top: 0rem;
+      padding-right: 0.5rem;
+
+      p {
+        color: vars.$lightColor;
+        font-size: .9rem;
+        background-color: vars.$primaryColor;
+        padding: 0.3rem;
+        border-radius: 0 0 .3rem .3rem;
+      }
+    }
+
     .vote {
       display: flex;
       justify-content: center;
