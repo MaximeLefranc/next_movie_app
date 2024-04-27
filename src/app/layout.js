@@ -1,8 +1,8 @@
 // Components
-import Header from '@/Components/Header/Header';
+import Header from '@/Components/Header/Header.jsx';
 
 // Fonts
-import { roboto, montserrat } from '@/font';
+import { roboto, montserrat } from '@/fonts/font';
 
 // Styles
 import '@fortawesome/fontawesome-svg-core/styles.css';

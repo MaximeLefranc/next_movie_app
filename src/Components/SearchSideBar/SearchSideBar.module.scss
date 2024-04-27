@@ -1,0 +1,11 @@
+@use 'vars';
+
+.sidebar {
+  margin-top: 2rem;
+  h1 {
+    font-size: 2.4rem;
+    color: vars.$secondaryColor;
+    font-weight: bold;
+    margin-bottom: 2.5rem;
+  }
+}
