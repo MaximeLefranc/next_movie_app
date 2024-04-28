@@ -17,8 +17,8 @@ const Form = () => {
     const searchParams = new URLSearchParams();
 
     searchParams.append('sort_by', form.get('sort'));
-    searchParams.append('release_date.gte', form.get('fromDate'));
-    searchParams.append('reease_date.lte', form.get('toDate'));
+    searchParams.append('primary_release_date_gte', form.get('fromDate'));
+    searchParams.append('primary_release_date_lte', form.get('toDate'));
 
     router.push(`${pathName}?${searchParams.toString()}`);
   };
@@ -30,7 +30,7 @@ const Form = () => {
         <h3>Date de sortie</h3>
         <div>
           <p>Du</p>
-          <input type="date" name="fromDate" />
+          <input type="date" name="fromDate" max={date} />
         </div>
         <div>
           <p>au</p>

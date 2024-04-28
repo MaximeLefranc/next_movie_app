@@ -19,9 +19,8 @@ const MediaCard = ({ media }) => {
         <div className={styles.content}>
           <p className={styles.vote}>{media.vote_average.toFixed(1)}</p>
           <div className={styles.genres}>
-            {media.genres.map((genre) => (
-              <p key={genre.id}>{genre.name}</p>
-            ))}
+            {media.genres &&
+              media.genres.map((genre) => <p key={genre.id}>{genre.name}</p>)}
           </div>
           <h3>{media.title}</h3>
           <p>Le {new Date(media.release_date).toLocaleDateString('fr-FR')}</p>

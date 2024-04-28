@@ -1,0 +1,10 @@
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin: 2rem 0 3rem 3rem;
+
+  > div {
+    width: 20rem;
+  }
+}
