@@ -1,9 +1,23 @@
 import React from 'react';
 
-const MoviePage = ({ params }) => {
+import { getMovieByPath } from '@/utils/movieClient';
+import { notFound } from 'next/navigation';
+
+import MovieDetails from '@/Components/MovieDetails/MovieDetails';
+
+export const dymanic = 'force-static';
+export const revalidate = 3600;
+
+const MoviePage = async ({ params }) => {
+  const movie = await getMovieByPath(`/movie/${params.id}`);
+
+  if (!movie.original_title) {
+    return notFound();
+  }
+
   return (
     <div>
-      <h1>Movie page with id : {params.id}</h1>
+      <MovieDetails movie={movie} />
     </div>
   );
 };
