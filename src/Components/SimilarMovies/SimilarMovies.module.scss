@@ -1,0 +1,16 @@
+@use 'vars';
+
+.similar {
+  display: flex;
+  justify-content: center;
+
+  .list {
+    display: flex;
+    gap: 2rem;
+    margin: 3rem 0 5rem 0;
+
+    > div {
+      width: 20rem;
+    }
+  }
+}

@@ -2,7 +2,7 @@ import { getMovieByPath } from '@/utils/movieClient';
 import styles from './SearchResults.module.scss';
 import MediaCard from '../MediaCard/MediaCard';
 
-const SearchResults = async ({ searchParams, genreID }) => {
+const SearchResults = async ({ searchParams, genreId }) => {
   const { results } = await getMovieByPath('/discover/movie', [
     { key: 'sort_by', value: searchParams.sort_by },
     {
@@ -13,10 +13,8 @@ const SearchResults = async ({ searchParams, genreID }) => {
       key: 'primary_release_date.lte',
       value: searchParams.primary_release_date_lte,
     },
-    { key: 'with_genres', value: genreID },
+    { key: 'with_genres', value: genreId },
   ]);
-
-  //! Mise en cache de cette requête par next !!!!
 
   return (
     <div className={styles.results}>

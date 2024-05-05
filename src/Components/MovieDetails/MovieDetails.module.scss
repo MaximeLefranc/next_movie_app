@@ -57,6 +57,33 @@
           font-size: 2rem;
         }
       }
+
+      .production {
+        font-size: 1.3rem;
+        margin-top: 1.5rem;
+      }
+
+      h2 {
+        color: vars.$lightColor;
+        font-size: 2rem;
+        font-weight: 500;
+        margin: 2.5rem 0 0;
+      }
+
+      .overview {
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        font-weight: 300;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin-top: 1rem;
+      }
+
+      .credits {
+        margin-top: auto;
+      }
     }
   }
 }
