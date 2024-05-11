@@ -8,7 +8,7 @@ import styles from './MediaCard.module.scss';
 const MediaCard = ({ media, locale }) => {
   return (
     <div className={styles.card}>
-      <Link href={`/movies/${media.id}`}>
+      <Link href={`/${locale}/movies/${media.id}`}>
         <div className={styles.image}>
           <Image
             src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w500${media.poster_path}`}

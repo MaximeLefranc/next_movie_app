@@ -1,0 +1,44 @@
+@use 'vars';
+
+.selector {
+  text-transform: uppercase;
+  position: relative;
+
+  &.enabled {
+    svg {
+      transform: rotate(180deg);
+    }
+    ul {
+      transform: scaleY(1);
+    }
+  }
+
+  ul {
+    background-color: vars.$primaryColor;
+    list-style-type: none;
+    position: absolute;
+    z-index: 20;
+    top: 2rem;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    flex-direction: column;
+    overflow: hidden;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: all .3s ease-in-out;
+    border-bottom-left-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+  }
+  
+  p {
+    cursor: pointer;
+  }
+  
+  svg {
+    transition: transform 0.3s ease-in-out;
+  }
+}

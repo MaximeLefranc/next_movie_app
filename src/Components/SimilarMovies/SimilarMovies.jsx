@@ -3,6 +3,7 @@ import React from 'react';
 import { getMovieByPath } from '@/utils/movieClient';
 import styles from './SimilarMovies.module.scss';
 import MediaCard from '../MediaCard/MediaCard';
+import { addGenresToMedias } from '@/utils/addGenresToMedias';
 
 const SimilarMovies = async ({ movieId, locale }) => {
   const { results } = await getMovieByPath(
@@ -10,11 +11,14 @@ const SimilarMovies = async ({ movieId, locale }) => {
     [],
     locale
   );
+
+  const movies = await addGenresToMedias(results, locale, 6);
+
   return (
     <div className={styles.similar}>
       <div className={styles.list}>
-        {results.slice(0, 6).map((movie) => (
-          <MediaCard key={movie.id} media={movie} />
+        {movies.map((movie) => (
+          <MediaCard key={movie.id} media={movie} locale={locale} />
         ))}
       </div>
     </div>
