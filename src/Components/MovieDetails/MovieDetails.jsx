@@ -4,7 +4,7 @@ import Image from 'next/image';
 import MovieCredits from '../MovieCredits/MovieCredits';
 import styles from './MovieDetails.module.scss';
 
-const MovieDetails = ({ movie }) => {
+const MovieDetails = ({ movie, locale }) => {
   return (
     <div className={styles.details}>
       <div className={styles.background}>
@@ -25,7 +25,7 @@ const MovieDetails = ({ movie }) => {
           <h1>
             {movie.title + ' '}
             <span className={styles.releaseDate}>
-              ({new Date(movie.release_date).toLocaleDateString('fr-FR')})
+              ({new Date(movie.release_date).toLocaleDateString(locale)})
             </span>
           </h1>
           <p className={styles.production}>

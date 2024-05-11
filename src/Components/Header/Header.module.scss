@@ -1,6 +1,11 @@
 @use 'vars';
 
 .header {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
   font-family: var(--font-roboto);
   display: flex;
   justify-content: space-between;

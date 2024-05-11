@@ -7,12 +7,16 @@ import MovieSearchResults from '../MovieSearchResults/MovieSearchResults';
 
 import styles from './MovieSearch.module.scss';
 
-const MovieSearch = () => {
+const MovieSearch = ({ locale }) => {
   const [movieResults, setMovieResults] = useState([]);
   const [hasFocus, setHasFocus] = useState(false);
 
   const updateMovieSearch = async (query) => {
-    const response = await fetch(`/api/movies/search?query=${query}`);
+    const response = await fetch(
+      `/api/movies/search?query=${query}`,
+      [],
+      locale
+    );
     const { results } = await response.json();
     setMovieResults(results.filter((movie) => movie.backdrop_path));
   };
@@ -25,11 +29,11 @@ const MovieSearch = () => {
         debounceTimeout={500}
         onChange={(e) => updateMovieSearch(e.target.value)}
         placeholder="Rechercher un titre ..."
-        onBlur={() => setHasFocus(false)}
+        onBlur={() => setTimeout(() => setHasFocus(false), 200)}
         onFocus={() => setHasFocus(true)}
       />
       {movieResults.length > 0 && hasFocus && (
-        <MovieSearchResults movieResults={movieResults} />
+        <MovieSearchResults movieResults={movieResults} locale={locale} />
       )}
     </div>
   );

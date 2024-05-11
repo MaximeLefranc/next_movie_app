@@ -3,8 +3,8 @@ import 'server-only';
 export const getMovieByPath = (
   path,
   params = [],
-  cache = 'force-cache',
-  language = 'fr-FR'
+  language = 'fr-FR',
+  cache = 'force-cache'
 ) => {
   const url = new URL(`${process.env.TMDB_API_URL}${path}`);
 

@@ -1,6 +1,8 @@
 @use 'vars';
+@use 'keyframe';
 
 .similar {
+  animation: 2s ease-out 0s 1 fadeIn;
   display: flex;
   justify-content: center;
 

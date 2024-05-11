@@ -5,7 +5,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import styles from './Header.module.scss';
 import MovieSearch from '../MovieSearch/MovieSearch';
 
-const Header = () => {
+const Header = ({ locale }) => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -25,7 +25,7 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      <MovieSearch />
+      <MovieSearch locale={locale} />
       <div>
         <FontAwesomeIcon icon={faUser} />
       </div>

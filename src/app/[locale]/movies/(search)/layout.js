@@ -4,8 +4,8 @@ import { getMovieByPath } from '@/utils/movieClient';
 
 import styles from './layout.module.scss';
 
-const MovieSearchLayout = async ({ children }) => {
-  const { genres } = await getMovieByPath('/genre/movie/list');
+const MovieSearchLayout = async ({ children, params: { locale } }) => {
+  const { genres } = await getMovieByPath('/genre/movie/list', [], locale);
 
   return (
     <div className={styles.searchContainer}>

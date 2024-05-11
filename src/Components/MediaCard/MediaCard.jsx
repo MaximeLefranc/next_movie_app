@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 import styles from './MediaCard.module.scss';
 
-const MediaCard = ({ media }) => {
+const MediaCard = ({ media, locale }) => {
   return (
     <div className={styles.card}>
       <Link href={`/movies/${media.id}`}>
@@ -23,7 +23,7 @@ const MediaCard = ({ media }) => {
               media.genres.map((genre) => <p key={genre.id}>{genre.name}</p>)}
           </div>
           <h3>{media.title}</h3>
-          <p>Le {new Date(media.release_date).toLocaleDateString('fr-FR')}</p>
+          <p>Le {new Date(media.release_date).toLocaleDateString(locale)}</p>
         </div>
       </Link>
     </div>

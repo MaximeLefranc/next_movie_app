@@ -4,11 +4,11 @@ import Genres from '@/Components/Genres/Genres';
 
 export const revalidate = 86400;
 
-export default function Home() {
+export default function Home({ params: { locale } }) {
   return (
     <div className={styles.main}>
-      <Popular />
-      <Genres />
+      <Popular locale={locale} />
+      <Genres locale={locale} />
     </div>
   );
 }

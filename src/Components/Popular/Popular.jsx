@@ -9,9 +9,9 @@ import MediaCard from '@/Components/MediaCard/MediaCard';
 // Style
 import styles from './Popular.module.scss';
 
-const Popular = async () => {
-  const { results } = await getMovieByPath('/movie/popular');
-  const { genres } = await getMovieByPath('/genre/movie/list');
+const Popular = async ({ locale }) => {
+  const { results } = await getMovieByPath('/movie/popular', [], locale);
+  const { genres } = await getMovieByPath('/genre/movie/list', [], locale);
 
   const popularMovies = results.slice(0, 6).map((movie) => {
     const genresToAdd = [];
