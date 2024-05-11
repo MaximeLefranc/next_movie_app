@@ -1,0 +1,12 @@
+{
+  "popular": {
+    "title": "Most popular"
+  },
+  "genre": {
+    "title": "Browse by genres"
+  },
+  "navBar": {
+    "series": "Series",
+    "movies": "Movies"
+  }
+}

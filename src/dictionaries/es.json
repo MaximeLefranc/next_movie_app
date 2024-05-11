@@ -1,0 +1,12 @@
+{
+  "popular": {
+    "title": "Los más populares"
+  },
+  "genre": {
+    "title": "Explorar por género"
+  },
+  "navBar": {
+    "series": "Series",
+    "movies": "Películas"
+  }
+}
