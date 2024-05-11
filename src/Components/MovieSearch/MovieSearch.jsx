@@ -13,9 +13,7 @@ const MovieSearch = ({ locale }) => {
 
   const updateMovieSearch = async (query) => {
     const response = await fetch(
-      `/api/movies/search?query=${query}`,
-      [],
-      locale
+      `/api/movies/search?query=${query}&language=${locale}`
     );
     const { results } = await response.json();
     setMovieResults(results.filter((movie) => movie.backdrop_path));

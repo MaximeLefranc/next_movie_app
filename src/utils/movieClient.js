@@ -16,6 +16,8 @@ export const getMovieByPath = (
       url.searchParams.append(param.key, param.value);
     });
 
+  console.log(url);
+
   return fetch(url, {
     cache: cache,
     headers: {
