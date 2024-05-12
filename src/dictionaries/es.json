@@ -8,5 +8,8 @@
   "navBar": {
     "series": "Series",
     "movies": "Películas"
+  },
+  "movieDetails": {
+    "synopsisNotFound": "No hay sinopsis para esta película ..."
   }
 }

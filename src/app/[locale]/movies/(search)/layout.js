@@ -9,7 +9,7 @@ const MovieSearchLayout = async ({ children, params: { locale } }) => {
 
   return (
     <div className={styles.searchContainer}>
-      <SearchSideBar genres={genres} />
+      <SearchSideBar genres={genres} locale={locale} />
       <div>{children}</div>
     </div>
   );

@@ -11,6 +11,14 @@ const MovieSearch = ({ locale }) => {
   const [movieResults, setMovieResults] = useState([]);
   const [hasFocus, setHasFocus] = useState(false);
 
+  let placeholder = 'Rechercher un titre ...';
+
+  if (locale === 'en') {
+    placeholder = 'Search for a title ...';
+  } else if (locale === 'es') {
+    placeholder = 'Buscar un título ...';
+  }
+
   const updateMovieSearch = async (query) => {
     const response = await fetch(
       `/api/movies/search?query=${query}&language=${locale}`
@@ -26,7 +34,7 @@ const MovieSearch = ({ locale }) => {
         minLength={2}
         debounceTimeout={500}
         onChange={(e) => updateMovieSearch(e.target.value)}
-        placeholder="Rechercher un titre ..."
+        placeholder={placeholder}
         onBlur={() => setTimeout(() => setHasFocus(false), 200)}
         onFocus={() => setHasFocus(true)}
       />

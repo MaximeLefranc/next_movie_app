@@ -4,7 +4,7 @@ import { useRouter, usePathname } from 'next/navigation';
 
 import styles from './Form.module.scss';
 
-const Form = () => {
+const Form = ({ locale }) => {
   const router = useRouter();
   const pathName = usePathname();
 
@@ -23,29 +23,69 @@ const Form = () => {
     router.push(`${pathName}?${searchParams.toString()}`);
   };
 
+  const dictionary = {
+    en: {
+      filter: 'Filter',
+      releaseDate: 'Release date',
+      from: 'From',
+      to: 'to',
+      filterBy: 'Filter by',
+      popularity: 'Popularity',
+      note: 'Note',
+      numberOfNotes: 'Number of notes',
+      search: 'Search',
+    },
+    es: {
+      filter: 'Filter',
+      releaseDate: 'Fecha de publicación',
+      from: 'Del',
+      to: 'al',
+      filterBy: 'Filtrar por',
+      popularity: 'Popularidad',
+      note: 'Nota',
+      numberOfNotes: 'Cantidad de notas',
+      search: 'Buscar',
+    },
+    fr: {
+      filter: 'Filter',
+      releaseDate: 'Date de sortie',
+      from: 'Du',
+      to: 'au',
+      filterBy: 'Trier par',
+      popularity: 'Popularité',
+      note: 'Note',
+      numberOfNotes: 'Nombre de notes',
+      search: 'Rechercher',
+    },
+  };
+
   return (
     <form className={styles.container} onSubmit={handleSubmit}>
-      <h2>Filter</h2>
+      <h2>{dictionary[locale].filter}</h2>
       <div className={styles.date}>
-        <h3>Date de sortie</h3>
+        <h3>{dictionary[locale].releaseDate}</h3>
         <div>
-          <p>Du</p>
+          <p>{dictionary[locale].from}</p>
           <input type="date" name="fromDate" max={date} />
         </div>
         <div>
-          <p>au</p>
+          <p>{dictionary[locale].to}</p>
           <input type="date" name="toDate" defaultValue={date} max={date} />
         </div>
       </div>
       <div>
-        <h3>Trier par</h3>
+        <h3>{dictionary[locale].filterBy}</h3>
         <select name="sort">
-          <option value="popularity.desc">Popularité</option>
-          <option value="vote_average.desc">Note</option>
-          <option value="code_count.desc">Nombre de notes</option>
+          <option value="popularity.desc">
+            {dictionary[locale].popularity}
+          </option>
+          <option value="vote_average.desc">{dictionary[locale].note}</option>
+          <option value="code_count.desc">
+            {dictionary[locale].numberOfNotes}
+          </option>
         </select>
       </div>
-      <input type="submit" value="Rechercher" />
+      <input type="submit" value={dictionary[locale].search} />
     </form>
   );
 };

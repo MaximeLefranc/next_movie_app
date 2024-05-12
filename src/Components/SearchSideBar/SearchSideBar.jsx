@@ -4,12 +4,17 @@ import Form from './Form/Form';
 
 import styles from './SearchSideBar.module.scss';
 
-const SearchSideBar = ({ genres }) => {
+const SearchSideBar = ({ genres, locale }) => {
   const segment = useSelectedLayoutSegment();
   const { id } = useParams();
 
   const getSideBarTitle = () => {
     if (!segment) {
+      if (locale === 'en') {
+        return 'Movies';
+      } else if (locale === 'es') {
+        return 'Películas';
+      }
       return 'Films';
     }
     const genre = genres.find((genre) => genre.id === Number(id));
@@ -20,12 +25,19 @@ const SearchSideBar = ({ genres }) => {
 
     return genre.name;
   };
-  const title = getSideBarTitle();
+
+  let title = `Tous les '${getSideBarTitle()}'`;
+
+  if (locale === 'en') {
+    title = `All '${getSideBarTitle()}'`;
+  } else if (locale === 'es') {
+    title = `Todas las '${getSideBarTitle()}'`;
+  }
 
   return (
     <div className={styles.sidebar}>
-      <h1>Tous les &quot;{title}&quot;</h1>
-      <Form />
+      <h1>{title}</h1>
+      <Form locale={locale} />
     </div>
   );
 };

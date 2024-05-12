@@ -3,8 +3,11 @@ import React, { Suspense } from 'react';
 import Image from 'next/image';
 import MovieCredits from '../MovieCredits/MovieCredits';
 import styles from './MovieDetails.module.scss';
+import { getDictionary } from '@/utils/dictionaries';
 
-const MovieDetails = ({ movie, locale }) => {
+const MovieDetails = async ({ movie, locale }) => {
+  const i18n = await getDictionary(locale);
+
   return (
     <div className={styles.details}>
       <div className={styles.background}>
@@ -40,7 +43,7 @@ const MovieDetails = ({ movie, locale }) => {
           <p className={styles.overview}>
             {movie.overview
               ? movie.overview
-              : 'Pas de synopsis pour ce film ...'}
+              : i18n.movieDetails.synopsisNotFound}
           </p>
           <div className={styles.credits}>
             <Suspense fallback={<p>Chargement ...</p>}>
