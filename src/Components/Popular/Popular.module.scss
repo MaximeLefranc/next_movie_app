@@ -2,8 +2,11 @@
 
 .container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 3rem;
+  width: 90%;
+  margin: auto;
 
   > div {
     width: 20rem;

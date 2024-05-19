@@ -3,6 +3,7 @@ import React from 'react';
 // Next
 import Link from 'next/link';
 import { cookies } from 'next/headers';
+import { getServerSession } from 'next-auth';
 
 // Components
 import MovieSearch from '../MovieSearch/MovieSearch';
@@ -22,7 +23,6 @@ export const dymanic = 'force-static';
 
 const Header = async ({ locale }) => {
   const isConnected = cookies().get('next-auth.session-token', '');
-  console.log(isConnected);
   const i18n = await getDictionary(locale);
 
   return (
@@ -41,19 +41,14 @@ const Header = async ({ locale }) => {
             <li>
               <Link href={`/${locale}/movies`}>{i18n.navBar.movies}</Link>
             </li>
-          </ul>
-        </nav>
-        <MovieSearch locale={locale} />
-        <nav>
-          <ul>
             {isConnected ? (
               <>
-                <Link
-                  className={styles.profileIcon}
-                  href={`/${locale}/user/profile`}>
-                  <FontAwesomeIcon icon={faUser} />
-                </Link>
                 <LogoutLink logoutLabel={i18n.navBar.logout} locale={locale} />
+                <li>
+                  <Link href={`/${locale}/user/profile`}>
+                    <FontAwesomeIcon icon={faUser} />
+                  </Link>
+                </li>
               </>
             ) : (
               <>
@@ -69,6 +64,7 @@ const Header = async ({ locale }) => {
             )}
           </ul>
         </nav>
+        <MovieSearch locale={locale} />
       </div>
       <LanguageSelector />
     </header>

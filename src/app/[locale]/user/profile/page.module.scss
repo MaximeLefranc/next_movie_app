@@ -1,0 +1,29 @@
+@use 'vars';
+
+.profile {
+  padding: 1rem 5rem 0 5rem;
+
+  .head {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+
+    h1 {
+      font-size: 2rem;
+      margin: 0;
+      color: vars.$secondaryColor;
+      font-weight: bold;
+    }
+  }
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    gap: 2rem;
+
+    > div {
+      width: 20rem;
+    }
+  }
+}

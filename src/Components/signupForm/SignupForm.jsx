@@ -21,7 +21,6 @@ const SignupForm = ({ locale }) => {
         password: formData.get('password'),
       }),
     }).then((response) => {
-      console.log(response);
       if (response.ok) {
         signIn();
       }

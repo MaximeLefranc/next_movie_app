@@ -16,12 +16,20 @@ export const getMovieByPath = (
       url.searchParams.append(param.key, param.value);
     });
 
-  console.log(url);
-
   return fetch(url, {
     cache: cache,
     headers: {
       Authorization: `Bearer ${process.env.TMDB_JWT_TOKEN}`,
     },
   }).then((response) => response.json());
+};
+
+export const getHydratedMovies = async (movieIds, language = 'fr-FR') => {
+  const moviePromises = movieIds.map((movieId) =>
+    getMovieByPath(`/movie/${movieId}`, [], language)
+  );
+
+  const movies = await Promise.all(moviePromises);
+
+  return movies;
 };

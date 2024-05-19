@@ -15,7 +15,7 @@ const Popular = async ({ locale }) => {
   const { results } = await getMovieByPath('/movie/popular', [], locale);
   const i18n = await getDictionary(locale);
 
-  const popularMovies = await addGenresToMedias(results, locale, 6);
+  const popularMovies = await addGenresToMedias(results, locale, 12);
 
   return (
     <div>
