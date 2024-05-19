@@ -7,7 +7,10 @@
   },
   "navBar": {
     "series": "Series",
-    "movies": "Películas"
+    "movies": "Películas",
+    "register": "Inscripción",
+    "logout": "Desconexión",
+    "login": "Conexión"
   },
   "movieDetails": {
     "synopsisNotFound": "No hay sinopsis para esta película ..."

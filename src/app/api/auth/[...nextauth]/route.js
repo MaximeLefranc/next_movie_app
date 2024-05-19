@@ -4,7 +4,7 @@ import CredentialsProvider from 'next-auth/providers/credentials';
 const handler = NextAuth({
   providers: [
     CredentialsProvider({
-      name: MovieApp,
+      name: 'MovieApp',
       credentials: {
         email: {
           lablel: 'E-mail',

@@ -32,13 +32,12 @@
     gap: 2rem;
 
     nav {
+      display: flex;
+      align-items: center;
       ul {
         display: flex;
         gap: 2rem;
         margin-right: 2rem;
-        li {
-
-        }
       }
     }
   }

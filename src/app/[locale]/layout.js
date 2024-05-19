@@ -10,6 +10,7 @@ import { availableLocales } from '@/utils/i18n';
 // Styles
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import '@/styles/globals.scss';
+import AuthProvider from '@/Components/AuthProvider/AuthProvider';
 
 export const metadata = {
   title: 'Create Next App',
@@ -27,7 +28,9 @@ export default function RootLayout({ children, params: { locale } }) {
     <html lang="fr">
       <body className={`${roboto.variable} ${montserrat.variable}`}>
         <Header locale={locale} />
-        <main>{children}</main>
+        <main>
+          <AuthProvider>{children}</AuthProvider>
+        </main>
       </body>
     </html>
   );
